@@ -74,9 +74,13 @@ getPrice();
 ```
 
 ### <ins>ARRAY METHODS
- -  Reason why Map , filter , and reduce are better than for-loops...Because it is **Declarative**
-  - Imperative -> Saying How to do it
-  - Declarative -> Saying What to do
+  ***2 Things to be noted in array methods***  
+  => Whether it mutate the Original Array  
+  => What data type it returns
+
+  -  Reason why Map , filter , and reduce are better than for-loops...Because it is **Declarative**
+- Imperative -> Saying How to do it
+ - Declarative -> Saying What to do
 
 MAP
  - It always return a new array

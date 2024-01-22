@@ -65,7 +65,7 @@ console.log(x1 + +x2); // Output : 8
 > - In case of comparing array they check the memory location
 
 ### <Ins>TYPES OF FUNCTION<Ins>
-
+ - Data Type of function is **'Function'**
  - Function that accepts another function as a parameter is called **"Higher Order Function"** 
 
  - Functions are First class citizens in JS

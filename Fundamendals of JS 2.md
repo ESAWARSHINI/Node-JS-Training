@@ -114,5 +114,19 @@ const names=avengers.filter((name)=>name.length>=10);
 console.log(names);
 //["Black widow","Captain america","Spider man"]
  ```
+
+ FOREACH
+ - Does not return anything
+ ```js
+ function sum(...num){
+    var total=0;
+    num.forEach((num)=>total+=num)
+    return total;
+}
+console.log(sum(1,2,3,4)); //10
+ ```
+
+ REDUCE
+ 
  
 

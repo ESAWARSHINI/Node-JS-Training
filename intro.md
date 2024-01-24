@@ -7,7 +7,7 @@
 - `ctrl+` ` - Open terminal
 - `ctrl+d` - Mutiple cursor
 
-### Steps to push code in github
+### Steps to push code in github for new Repository
 
 - **git init**
 - **git config --global user.name "esaseetha"**
@@ -17,3 +17,6 @@
 - Select **Commit**
 - to verify commited files **'git log'**
 - Select **Publish Branch/Sync Changes**.
+
+### To create a new Branch
+- **git checkout -b feature-name**

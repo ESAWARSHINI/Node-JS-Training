@@ -203,6 +203,14 @@ var marks = [40, 9, 80, 0, 30];
 Object.keys(salaries); // [ "John", "Pete",  "Mary" ]
 Object.values(salaries); // [ 100, 300, 250 ]
 ```
+***NOTE :***
+```JS
+var str = "hello";
+console.log(str.name)//undefined
+
+// Here when we use dot operator there is no error because - String is considered as object in JS
+```
+
 ### <INS>ES6 FEATURES
 
 > <ins>1 . `` Template literal
@@ -215,7 +223,36 @@ Object.values(salaries); // [ 100, 300, 250 ]
 
 > <ins>2 . ... Spread operator
   - Used in **"Copy by Value"**
+  - For Objects it makes only the shallow copy of Objects
+  ```js
+  const obj1={
+    name:"esa",
+    age:21,
+    place:{
+        street:"raju nagar",
+        city:"tuty"
+    }
+};
+const obj2={...obj1};
+console.log(obj2);
+// {name: 'esa', age: 21, place: {…}}
+// The key 'place' will be as "Copy By Reference"
+```
  ><ins>3 . ... Rest operator
+ - Rest operator should only be used in the last
+ ```js
+ // To add last three numbers
+ function sum(a, b, ...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3, 4, 5));
+// output: 12
+ ```
 
  ><ins>4 . Destructuring
   - ARRAY DESTRUCTURING

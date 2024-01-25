@@ -40,3 +40,20 @@
            2 change occur in local git
 
 
+<ins>Deleting a commit
+
+1 . Using 'git reset' command
+  - It completely removes the previous commit.
+  1. Navigate to the branch where you need to undo a commit
+  2. **git reset --hard HEAD^** -> To remove the commit
+  3. **git push origin <branch-name> --force** -> To update in github also
+
+2.Using 'git revert' command
+ - Creates a new commit to undo changes
+  1. Use git log to find the commit hash of the commit you want to revert.
+  2. Copy the commit hash.
+  3. **git revert commit-hash** -> replace commit-hash with the value you copied
+  4. Clck 'commit' and 'Sync Changes'
+
+
+

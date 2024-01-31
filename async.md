@@ -1,4 +1,11 @@
+- SYNCHRONOU CODE
+  - Executed line by line
+- ASYNCHRONOUS CODE
+  - Executed Simultaneously ( Code that run in the background without blocking the execution of other code.)
+
 ### setTimeout() setInterval()
+
+- Both are part of Browser Method not Javascript functions (Including EventListeners)
 
 - Both Accept **Function** as 1st argument and **time delay(in milli second)** as 2nd argument
 
@@ -16,6 +23,7 @@ setTimeout(function () {
 
 - To stop the SetInterval() -> clearInterval()
 - **setTimeout() and setInterval()** may not run exactly after the mentioned time delay
+- **setTimeout() and setInterval()** without second argument -> Will have a default argument
 
 ```js
 const x = setInterval(function () {
@@ -101,12 +109,39 @@ function pause() {
 
 > Js is Single thread and Asynchronous
 
-### Architecture (refer loupe website)
+### JS Engine Architecture (refer loupe website)
 
-- Call Stack
+- Call Stack or Main Thread
   - All JS code run in Call Stack
+  - Follow FILO when code forms a stack
+  - **functions call** Remain in Call Stack until the function definition returns.
 - Web Apis
   - Handle Asynchronous Part (Asyn code waits here)
 - Call Queue
   - After mentioned time async code will be here
 - Event Loop
+
+  - Only when call stack is empty eventloop pushes code in call queue to call stack
+
+  ### To improve WebPage Performance
+
+  - Keep the Call Stack Empty (i.e) write a good code
+
+  ### CallBack Hell
+
+  - caused by Nesting of callback function
+  - Reduce Readability
+  - Callback Hell can be Resolved by **Promise**
+
+  ### Promise
+
+- Has 3 States
+  - Pending
+  - Fullfilled
+  - Rejected
+- Promise Methods
+  - .then() - Executed when resolve is called
+  - .catch() - Executed when reject is called
+  - .finally() - Whatever is called it will be executed
+  - .all() - Trigger multiple promises at a same time
+- Above All method Return Promise Object

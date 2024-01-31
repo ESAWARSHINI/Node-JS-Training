@@ -101,8 +101,12 @@ HTTP 3.0
 1 . Using 'git reset' command
   - It completely removes the previous commit.
   1. Navigate to the branch where you need to undo a commit
-  2. **git reset --hard HEAD^** -> To remove the commit
+  2. **git reset --hard HEAD^** or **git reset --soft HEAD~1**(delete 1 latest commit) -> To remove the commit
   3. **git push origin <branch-name> --force** -> To update in github also
+
+**--hard** -> Deleted commit will not be in staged changes
+
+**--soft** -> Deleted commit will be in staged changes
 
 2.Using 'git revert' command
  - Creates a new commit to undo changes

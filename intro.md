@@ -12,9 +12,9 @@
 - **git init**
 - **git config --global user.name "esaseetha"**
 - **git config --global user.email** "esaseethapathi@gmail.com"
-- Go to **Source control** in the left side panel. Select the **'+'** near the files you need to Commit
+- Go to **Source control** in the left side panel. Select the **'+'** near the files you need to Commit or **git add file-name** (**git add .**  -> To stage all changes )
 - Enter a Description related to the Commit
-- Select **Commit**
+- Select **Commit** or **git commit -m "Message"**
 - to verify commited files **'git log'**
 - Select **Publish Branch/Sync Changes**.
 
@@ -26,6 +26,10 @@
 
 <ins> To delete the branch locally(VS)  
    1. **git branch -D feature-name**
+
+  <ins> To go to previous branch
+
+  1. **git checkout -**
 
  <ins>To merge the feature branch to master in local(VS)
 

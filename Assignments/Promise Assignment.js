@@ -89,8 +89,8 @@ var Test1 = new Promise((resolve, reject) => {
 });
 
 var Test2 = new Promise((resolve, reject) => {
-  setTimeout(() => resolve("Test 2 Resolved"), 2000);
-  //setTimeout(() => reject("Test 2 Rejected"), 5000);
+  //setTimeout(() => resolve("Test 2 Resolved"), 2000);
+  setTimeout(() => reject("Test 2 Rejected"), 5000);
 });
 
 var Test3 = new Promise((resolve, reject) => {

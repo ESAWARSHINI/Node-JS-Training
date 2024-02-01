@@ -145,3 +145,10 @@ function pause() {
   - .finally() - Whatever is called it will be executed
   - .all() - Trigger multiple promises at a same time
 - Above All method Return Promise Object
+
+### Async Await
+
+- Alternate method for .then() and .catch()
+
+- If await is inside a function It should only be in async functions
+- Await can also be in Top level bodies of modules (Include -> `<script type="module" src="Draft.js"></script>`)

@@ -44,9 +44,7 @@
 
 <ins>NOTE:
 
-> **1↓ 2↑** -> 1 change occur occur in cloud and
-
-           2 change occur in local git
+> **1↓ 2↑** -> 1 change occur occur in cloud and 2 change occur in local git
 
 <ins>Deleting a commit
 
@@ -66,3 +64,7 @@
 2. Copy the commit hash.
 3. **git revert commit-hash** -> replace commit-hash with the value you copied
 4. Clck 'commit' and 'Sync Changes'
+
+> `git stash` - If the changes should be Temporily available for future use which is not commited to git
+
+> `git stash apply`- To reapply changes back again to the vs code

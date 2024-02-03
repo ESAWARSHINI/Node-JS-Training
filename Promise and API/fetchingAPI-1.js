@@ -1,3 +1,9 @@
+// Only with our own API we can do all the crud operations
+// Chrome -get
+// Postman - post , put , delete
+//Postman ->To Test API
+// Open Source API only allow get Operation
+
 fetch("https://restcountries.com/v3.1/all")
   .then((data) => data.json())
   .then((msg) => console.log(msg));

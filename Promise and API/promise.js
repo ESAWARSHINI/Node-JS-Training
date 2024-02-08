@@ -144,3 +144,28 @@ Promise.race([f1, f2, f3]).then((data) => console.log(data));
 //Promise.allSettled()
 // Unlike .all() It will wait for all input promises to complete, regardless of whether or not one rejects. Use allSettled() if you need the final result of every promise in the input iterable.
 // op will be array of objects with properties status and value(For Resolve)/reason(For Reject)
+
+// Callback to Promise
+var i = 4;
+function call(i) {
+  var Test = new Promise((resolve, reject) => {
+    if (i > 1) setTimeout(() => resolve(--i), 1000);
+    else setTimeout(() => reject("Happy New year"), 1000);
+  });
+  return Test;
+}
+
+call(i)
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .catch((msg) => console.log(msg));

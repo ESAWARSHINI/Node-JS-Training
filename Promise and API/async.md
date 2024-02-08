@@ -1,4 +1,4 @@
-- SYNCHRONOU CODE
+- SYNCHRONOUS CODE
   - Executed line by line
 - ASYNCHRONOUS CODE
   - Executed Simultaneously ( Code that run in the background without blocking the execution of other code.)

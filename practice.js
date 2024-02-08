@@ -1,16 +1,52 @@
-const user1 = {
-  name: "hiiiii",
-  getname: function (greet1, greet2) {
-    console.log(`name is ${this.name} ${greet1} ${greet2}`);
-  },
-};
+// var i = 4;
+// function call(i) {
+//   var Test = new Promise((resolve, reject) => {
+//     if (i > 1) setTimeout(() => resolve(--i), 1000);
+//     else setTimeout(() => reject("Happy New year"), 1000);
+//   });
+//   return Test;
+// }
 
-const user2 = {
-  name: "hello",
-};
+// call(i)
+//   .then((msg) => {
+//     console.log(msg);
+//     return call(msg);
+//   })
+//   .then((msg) => {
+//     console.log(msg);
+//     return call(msg);
+//   })
+//   .then((msg) => {
+//     console.log(msg);
+//     return call(msg);
+//   })
+//   .catch((msg) => console.log(msg));
 
-var x = user1.getname.bind(user2);
-x("welcome", "pleasure to see you");
+// Test.then((msg) => console.log(msg))
+//   .then((msg) => console.log(msg))
+//   .then((msg) => console.log(msg))
+//   .then((msg) => console.log("Happy new year"));
 
-user1.getname.call(user2, "hiii", "good to see you");
-user1.getname.apply(user2, ["hello", "have great day"]);
+var i = 4;
+function call(i) {
+  var Test = new Promise((resolve, reject) => {
+    if (i > 1) setTimeout(() => resolve(--i), 1000);
+    else setTimeout(() => reject("Happy New year"), 1000);
+  });
+  return Test;
+}
+
+call(i)
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .then((msg) => {
+    console.log(msg);
+    return call(msg);
+  })
+  .catch((msg) => console.log(msg));

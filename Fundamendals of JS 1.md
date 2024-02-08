@@ -1,42 +1,45 @@
 ### <ins>TYPES OF DECLARATION</ins>
 
 VAR
- - Can be Redeclared
- - Can be Reassigned
+
+- Can be Redeclared
+- Can be Reassigned
 
 LET
- - Cannot be Redeclared
- - Can be Reassigned
+
+- Cannot be Redeclared
+- Can be Reassigned
 
 CONST
- - Cannot be Redeclared
- - cannot be Reassigned
 
- ### <ins>SCOPE OF VARIABLE</ins>
+- Cannot be Redeclared
+- cannot be Reassigned
 
- Scope - ***Lifetime of a Variable***
+### <ins>SCOPE OF VARIABLE</ins>
 
- >var - Function Scope
+Scope - **_Lifetime of a Variable_**
 
- Variables declared with <ins>**var**</ins> inside any function cannot be accessible outside the function
+> var - Function Scope
 
- >let , const - Block Scope
+Variables declared with <ins>**var**</ins> inside any function cannot be accessible outside the function
 
- Variables declared with <ins>**let and const**</ins> inside any block cannot be accessible outside the block.
+> let , const - Block Scope
 
- ### <ins>LEXICAL SCOPE
+Variables declared with <ins>**let and const**</ins> inside any block cannot be accessible outside the block.
 
- ![Alt text](image-1.png)
+### <ins>LEXICAL SCOPE
 
- A function can access all the variables and methods in its lexical scope.
+![Alt text](image-1.png)
 
- >Lexical Scope + Own Scope = Closure
+A function can access all the variables and methods in its lexical scope.
 
- ### <ins>TYPECASTING/COERTION</ins>
+> Lexical Scope + Own Scope = Closure
 
- *Implicit Typecasting*
+### <ins>TYPECASTING/COERTION</ins>
 
-  When JavaScript automatically converts a value to a different data type based on the context.
+_Implicit Typecasting_
+
+When JavaScript automatically converts a value to a different data type based on the context.
 
 ```js
 var x1 = 3;
@@ -48,7 +51,8 @@ console.log(x1 - x2); // Output : -2
 // 3
 // "5" -> 5
 ```
-*Explicit Typecasting*
+
+_Explicit Typecasting_
 
 Explicit typecasting is performed manually using built-in methods.
 
@@ -58,57 +62,67 @@ var x2 = "5";
 console.log(x1 + parseInt(x2)); //Output : 8
 console.log(x1 + +x2); // Output : 8
 ```
-> **NOTE :**   
-> "===" is faster than "=="   
-> - "==" allows typecasting then compare the values  
+
+> **NOTE :**  
+> "===" is faster than "=="
+>
+> - "==" allows typecasting then compare the values
 > - "===" directly checks the value.
 > - In case of comparing array they check the memory location
 
 ### <Ins>TYPES OF FUNCTION<Ins>
- - Data Type of function is **'Function'**
- - Function that accepts another function as a parameter is called **"Higher Order Function"** 
 
- - Functions are First class citizens in JS
- because
-   - It can be treated as a value (i.e) Can be assigned to a variable
-   - It can be passed to another function as a parameter
-   - It can be returned from another function
-  
- - **Predicate Function** - Function that return Boolean.
+- Data Type of function is **'Function'**
+- Function that accepts another function as a parameter is called **"Higher Order Function"**
 
+- Functions are First class citizens in JS
+  because
+
+  - It can be treated as a value (i.e) Can be assigned to a variable
+  - It can be passed to another function as a parameter
+  - It can be returned from another function
+
+- **Predicate Function** - Function that return Boolean.
 
 - NORMAL FUNCTION
+
 ```js
 function double(n) {
   return n * 2;
 }
 ```
+
 - ARROW FUNCTION
+
 ```js
 const double = (n) => n * 2;
 ```
+
 - ANONYMOUS FUNCTION
- ```js
- var x= function (){
-   return 10;
- }
- x(); //10
- ```
- ```js
- function sum(a) {
+
+```js
+var x = function () {
+  return 10;
+};
+x(); //10
+```
+
+```js
+function sum(a) {
   return (b) => {
-    return a+b;
+    return a + b;
   };
 }
-var result=sum(4);
-console.log(result(5)) // 9
- ```
+var result = sum(4);
+console.log(result(5)); // 9
+```
 
 - IIFE - Immediately Invoked Function expression
 
-- Function that is called immediately after it is defined. 
+- Function that is called immediately after it is defined.
 
 - Used by Library Authors As there will be no name clashes for users.
+
 ```js
 //Normal IIFE Function
 (function double(n) {
@@ -120,8 +134,10 @@ console.log(result(5)) // 9
   console.log(n * 2);
 })(80);
 ```
+
 ### <ins>COPY BY VALUE</ins>
- - Using Spread Operator and concat()
+
+- Using Spread Operator and concat()
 
 ```js
 // using spread operator
@@ -129,73 +145,85 @@ var q1 = [100, 200];
 var q7 = [80, ...q1, 300, 400]; // [80, 100, 200, 300, 400]
 
 // using concat();
-const a1=[1,2];
-const a2=[3,4];
-const a3=a1.concat(a2);
-console.log(a3);// 1 2 3 4
+const a1 = [1, 2];
+const a2 = [3, 4];
+const a3 = a1.concat(a2);
+console.log(a3); // 1 2 3 4
 
 // Elements inside "const Array" can be changed because array variable only points to the address of first element
 
-const a=[1,2];
+const a = [1, 2];
 a.push(10);
 console.log(a); // 1 2 10
 ```
+
 ### <INS>COPY BY REFERENCE
 
 ```js
-let a1=[10,20];
-let a2=a1;
+let a1 = [10, 20];
+let a2 = a1;
 
 a1.push(30);
 a2.push(40);
 
-console.log(a1);// 10 20 30 40
-console.log(a2);// 10 20 30 40
+console.log(a1); // 10 20 30 40
+console.log(a2); // 10 20 30 40
 
 // Because a1 and a2 points to same memory location
 ```
+
 ### <ins>DIFFERENT FOR LOOPS
 
 ```js
 var marks = [40, 9, 80, 0, 30];
 ```
- - for loop
-  ```js
-  for (var index = 0; index < marks.length; index++) {
+
+- for loop
+
+```js
+for (var index = 0; index < marks.length; index++) {
   console.log("index is", index);
   console.log("value is", marks[index]);
 }
-  ```
- - for...of
+```
 
- Only accepts array
- ```js
- for (var mark of marks) {
+- for...of
+
+Only accepts array
+
+```js
+for (var mark of marks) {
   console.log("mark is", mark);
 }
- ```
- - for...in
+```
 
-  Accepts both Array and Oject
- ```js
- for (var index in marks) {
+- for...in
+
+Accepts both Array and Oject
+
+```js
+for (var index in marks) {
   console.log("index is", index);
   console.log("mark is", marks[index]);
 }
- ```
- ### <ins>OBJECT</ins>
+```
 
- **Object** is a derived datatype
- ```js
- const salaries = {
-    esa:100000,
-    anbu:80000,
-    karti:90000,
- };
- ```
- OBJECT METHODS
+### <ins>OBJECT</ins>
+
+**Object** is a derived datatype
+
 ```js
- let salaries = {
+const salaries = {
+  esa: 100000,
+  anbu: 80000,
+  karti: 90000,
+};
+```
+
+OBJECT METHODS
+
+```js
+let salaries = {
   John: 100,
   Pete: 300,
   Mary: 250,
@@ -203,7 +231,9 @@ var marks = [40, 9, 80, 0, 30];
 Object.keys(salaries); // [ "John", "Pete",  "Mary" ]
 Object.values(salaries); // [ 100, 300, 250 ]
 ```
-***NOTE :***
+
+**_NOTE :_**
+
 ```JS
 var str = "hello";
 console.log(str.name)//undefined
@@ -214,35 +244,41 @@ console.log(str.name)//undefined
 ### <INS>ES6 FEATURES
 
 > <ins>1 . `` Template literal
- ```JS
+
+```JS
 `Welcome ${lastname}, ${firstname} !!!`
 ```
-   - $ { } --> Interpolation    
-   - Allow multi-Line String
 
+- $ { } --> Interpolation
+- Allow multi-Line String
 
 > <ins>2 . ... Spread operator
-  - Used in **"Copy by Value"**
-  - For Objects it makes only the shallow copy of Objects
-  ```js
-  const obj1={
-    name:"esa",
-    age:21,
-    place:{
-        street:"raju nagar",
-        city:"tuty"
-    }
+
+- Used in **"Copy by Value"**
+- For Objects it makes only the shallow copy of Objects
+
+```js
+const obj1 = {
+  name: "esa",
+  age: 21,
+  place: {
+    street: "raju nagar",
+    city: "tuty",
+  },
 };
-const obj2={...obj1};
+const obj2 = { ...obj1 };
 console.log(obj2);
 // {name: 'esa', age: 21, place: {…}}
 // The key 'place' will be as "Copy By Reference"
 ```
- ><ins>3 . ... Rest operator
- - Rest operator should only be used in the last
- ```js
- // To add last three numbers
- function sum(a, b, ...theArgs) {
+
+> <ins>3 . ... Rest operator
+
+- Rest operator should only be used in the last
+
+```js
+// To add last three numbers
+function sum(a, b, ...theArgs) {
   let total = 0;
   for (const arg of theArgs) {
     total += arg;
@@ -252,47 +288,51 @@ console.log(obj2);
 
 console.log(sum(1, 2, 3, 4, 5));
 // output: 12
- ```
+```
 
- ><ins>4 . Destructuring
-  - ARRAY DESTRUCTURING
-  ```JS
-  const [t1, t2, t3] = [100, 200];
-  console.log(t1, t2, t3);
-  // Output : 100 200 undefined
+> <ins>4 . Destructuring
 
-  const [t1, t2, t3 = 80] = [100, 200];
-  console.log(t1, t2, t3);
-  //Output : 100 200 80
+- ARRAY DESTRUCTURING
 
-  
-  const [t1, t2, t3 = 80] = [100, 200 , 500];
-  console.log(t1, t2, t3);
-  //Output : 100 200 500
+```JS
+const [t1, t2, t3] = [100, 200];
+console.log(t1, t2, t3);
+// Output : 100 200 undefined
 
-  // Default values will be taken only when a variable is undefined
-  // In the above example 80 is the Default value
+const [t1, t2, t3 = 80] = [100, 200];
+console.log(t1, t2, t3);
+//Output : 100 200 80
 
-  // using Rest Operator
-  const[t1,...t2]=[100,200,300,400];
-  console.log(t1);//100
-  console.log(t2);//200 300 400
 
-  // Rest Operator should only be used in the last in destructuring.
+const [t1, t2, t3 = 80] = [100, 200 , 500];
+console.log(t1, t2, t3);
+//Output : 100 200 500
 
+// Default values will be taken only when a variable is undefined
+// In the above example 80 is the Default value
+
+// using Rest Operator
+const[t1,...t2]=[100,200,300,400];
+console.log(t1);//100
+console.log(t2);//200 300 400
+
+// Rest Operator should only be used in the last in destructuring.
+
+```
+
+- Holes
+
+  To skip values
+
+  ```js
+  const [t1, , t2, t3 = 80] = [100, 200, null];
+  console.log(t1, t2, t3); // 100 null 80
   ```
- - Holes
-
-    To skip values
-   ```js
-   const [t1, , t2, t3 = 80] = [100, 200, null];
-   console.log(t1, t2, t3); // 100 null 80
-   ```
 
 - OBJECT DESTRUCTURING
 
- ```js
- const { name, networth, power } = {
+```js
+const { name, networth, power } = {
   name: "Tony Stark",
   house: 10,
   networth: "9C",
@@ -305,28 +345,31 @@ console.log(networth); // "9C"
 console.log(power); // 1000
 
 // Default value - Similar to Array destructuring
- ```
+```
 
- ><ins>5 .Arrow function =>
+> <ins>5 .Arrow function =>
 
 ```js
 const double = (n) => n * 2;
 ```
 
- ><ins>6 . Numeric separators 1_00_00_000
- - For Readability
- ```js
- const num = 1_00_00_00_00;
- ```
- ><ins>7 . Nullish Coalescing ??
- 
-  - Undefined and null are called bottom values in JS
+> <ins>6 . Numeric separators 1_00_00_000
 
-  - Nullish coaleshing only make "Null and Undefined" into falsy.
+- For Readability
 
- ***Truthy and Falsy***
+```js
+const num = 1_00_00_00_00;
+```
 
- When ever there is a condition It expects a boolean. So JS uses type conversion to coerce anything in the condition to be a boolean.
+> <ins>7 . Nullish Coalescing ??
+
+- Undefined and null are called bottom values in JS
+
+- Nullish coaleshing only make "Null and Undefined" into falsy.
+
+**_Truthy and Falsy_**
+
+When ever there is a condition It expects a boolean. So JS uses type conversion to coerce anything in the condition to be a boolean.
 
 - null
 - undefined
@@ -343,53 +386,49 @@ Above value is a value that is considered false when encountered in a Boolean co
 ```js
 console.log("hi" || 1); // hi
 console.log(0 || undefined); // undefined
-console.log(1|| NaN); //1
+console.log(1 || NaN); //1
 
 // In nullish coaleshing
-console.log(0 ?? undefined) //0
+console.log(0 ?? undefined); //0
 ```
 
- ><ins>8 . Optional Chaining ?.
+> <ins>8 . Optional Chaining ?.
 
-  To avoid Defensive code
-   - Defensive code - Code written to avoid errors.
-   eg : if-else
- ```js
- const obj={
-  name :{
-    first : "esa",
-    last : "seetha"
+To avoid Defensive code
+
+- Defensive code - Code written to avoid errors.
+  eg : if-else
+
+```js
+const obj = {
+  name: {
+    first: "esa",
+    last: "seetha",
   },
-  place :{
-    city : "tuty"
-  }
- };
+  place: {
+    city: "tuty",
+  },
+};
 //without Optional Chaining
-console.log(obj.placee.doorno);//error
+console.log(obj.placee.doorno); //error
 
 //With Optional chaining
-console.log(obj?.placee?.doorno);// undefined
- ```
+console.log(obj?.placee?.doorno); // undefined
+```
 
- >9 . <ins>Object Short-Hand
+> 9 . <ins>Object Short-Hand
 
-  Used Only when Key name and value name are equal.
- ```js
- //Without Object Shorthand
- var foo = {
-    x: x,
-    y: y,
-    z: z,
-    a: function() {},
+Used Only when Key name and value name are equal.
+
+```js
+//Without Object Shorthand
+var foo = {
+  x: x,
+  y: y,
+  z: z,
+  a: function () {},
 };
 
 // With Object Shorthand
-var foo = {x, y, z , a() {}};
- ```
-
-
-
- 
-
-
-
+var foo = { x, y, z, a() {} };
+```
